@@ -14,7 +14,7 @@
       "destination": "/api/chat"
     },
     {
-      "source": "/file",
+      "source": "/file/:sandboxPort/:sandboxId",
       "destination": "https://:sandboxPort-:sandboxId.e2b.dev/file"
     }
   ],

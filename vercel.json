@@ -1,28 +1,21 @@
 {
   "version": 2,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/create-sandbox",
-      "dest": "/api/create-sandbox"
+      "source": "/api/create-sandbox",
+      "destination": "/api/create-sandbox"
     },
     {
-      "src": "/api/upload-file",
-      "dest": "/api/upload-file"
+      "source": "/api/upload-file",
+      "destination": "/api/upload-file"
     },
     {
-      "src": "/api/chat",
-      "dest": "/api/chat"
+      "source": "/api/chat",
+      "destination": "/api/chat"
     },
     {
-      "src": "/file",
-      "dest": "https://:sandboxPort-:sandboxId.e2b.dev/file"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/"
+      "source": "/file",
+      "destination": "https://:sandboxPort-:sandboxId.e2b.dev/file"
     }
   ],
   "headers": [

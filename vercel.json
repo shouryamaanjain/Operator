@@ -1,25 +1,51 @@
 {
   "version": 2,
-  "rewrites": [
+  "routes": [
     {
-      "source": "/chat/:path*",
-      "destination": "https://api.emplode.com/chat/:path*"
+      "source": "/api/create-sandbox",
+      "destination": "/api/create-sandbox"
+    },
+    {
+      "source": "/api/upload-file",
+      "destination": "/api/upload-file"
+    },
+    {
+      "source": "/api/chat",
+      "destination": "/api/chat"
+    },
+    {
+      "source": "/file",
+      "destination": "https://:sandboxPort-:sandboxId.e2b.dev/file"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
     }
   ],
   "headers": [
     {
-      "source": "/chat/(.*)",
+      "source": "/api/(.*)",
       "headers": [
+        {
+          "key": "Access-Control-Allow-Credentials",
+          "value": "true"
+        },
         {
           "key": "Access-Control-Allow-Origin",
           "value": "*"
         },
         {
           "key": "Access-Control-Allow-Methods",
-          "value": "GET"
+          "value": "GET,POST,PUT,DELETE,OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Authorization, Content-Type"
         }
       ]
     }
   ]
 }
-

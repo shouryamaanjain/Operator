@@ -14,8 +14,8 @@
       "destination": "/api/chat"
     },
     {
-      "source": "/file/:sandboxPort/:sandboxId",
-      "destination": "https://:sandboxPort-:sandboxId.e2b.dev/file"
+      "source": "/file/:path*",
+      "destination": "https://49982-:sandboxId.e2b.dev/file/:path*"
     }
   ],
   "headers": [
@@ -42,4 +42,3 @@
     }
   ]
 }
-
